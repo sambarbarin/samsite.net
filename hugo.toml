@@ -1,0 +1,4 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'fr-fr'
+title = 'Portfolio DevOps'
+# Using custom layouts instead of a theme

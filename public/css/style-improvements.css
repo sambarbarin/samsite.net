@@ -1,0 +1,939 @@
+/* 
+==============================================
+AMÉLIORATIONS DE STYLE POUR LE SITE PORTFOLIO DEVOPS
+==============================================
+Ce fichier contient toutes les améliorations de style suggérées pour
+rendre le site plus attrayant visuellement tout en conservant sa clarté.
+*/
+
+/* 
+==============================================
+1. PALETTE DE COULEURS ENRICHIE
+==============================================
+*/
+:root {
+    /* Couleurs principales (existantes) */
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --accent-color: #3b82f6;
+    
+    /* Nouvelle couleur d'accent complémentaire (orange doux) */
+    --accent-complementary: #f97316;
+    
+    /* Nuances de gris plus variées pour la hiérarchie visuelle */
+    --text-color: #1f2937;
+    --text-color-light: #4b5563;
+    --text-color-lighter: #6b7280;
+    --text-color-lightest: #9ca3af;
+    
+    /* Couleurs de fond */
+    --background: #ffffff;
+    --background-alt: #f9fafb;
+    --light-bg: #f3f4f6;
+    --light-bg-alt: #e5e7eb;
+    
+    /* Couleurs de bordure */
+    --border-color: #e5e7eb;
+    --border-color-dark: #d1d5db;
+    
+    /* Couleurs de code */
+    --code-bg: #f1f5f9;
+    
+    /* Couleurs pour le mode sombre */
+    --dark-background: #121212;
+    --dark-background-alt: #1e1e1e;
+    --dark-text: #e5e7eb;
+    --dark-text-light: #9ca3af;
+    --dark-border: #374151;
+    --dark-accent: #60a5fa;
+    --dark-accent-complementary: #fb923c;
+}
+
+/* 
+==============================================
+2. TYPOGRAPHIE AMÉLIORÉE
+==============================================
+*/
+/* Importation de Montserrat pour les titres */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.02em; /* Espacement des lettres légèrement augmenté */
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-color);
+}
+
+/* Variation des tailles de police pour une meilleure hiérarchie visuelle */
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.03em;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.65rem;
+}
+
+h4 {
+    font-size: 1.35rem;
+}
+
+h5 {
+    font-size: 1.15rem;
+}
+
+h6 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Amélioration des paragraphes et du texte */
+p {
+    margin-bottom: 1.5em;
+    color: var(--text-color);
+}
+
+.text-light {
+    color: var(--text-color-light);
+}
+
+.text-lighter {
+    color: var(--text-color-lighter);
+}
+
+.text-lightest {
+    color: var(--text-color-lightest);
+}
+
+/* 
+==============================================
+3. MICRO-ANIMATIONS ET TRANSITIONS
+==============================================
+*/
+/* Transitions douces sur les liens et boutons */
+a, button, .btn {
+    transition: all 0.3s ease;
+}
+
+/* Animation d'apparition pour les sections */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content, .post-item, main > * {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Animation séquentielle pour les listes */
+.post-list li, .sidebar-nav li {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.post-list li:nth-child(1), .sidebar-nav li:nth-child(1) { animation-delay: 0.1s; }
+.post-list li:nth-child(2), .sidebar-nav li:nth-child(2) { animation-delay: 0.2s; }
+.post-list li:nth-child(3), .sidebar-nav li:nth-child(3) { animation-delay: 0.3s; }
+.post-list li:nth-child(4), .sidebar-nav li:nth-child(4) { animation-delay: 0.4s; }
+.post-list li:nth-child(5), .sidebar-nav li:nth-child(5) { animation-delay: 0.5s; }
+.post-list li:nth-child(n+6), .sidebar-nav li:nth-child(n+6) { animation-delay: 0.6s; }
+
+/* 
+==============================================
+4. CARTES DE CONTENU AMÉLIORÉES
+==============================================
+*/
+.post-item {
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: var(--background);
+    border: 1px solid var(--border-color);
+    /* Ombre portée plus subtile et moderne */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet au survol amélioré */
+.post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07), 0 3px 8px rgba(0, 0, 0, 0.05);
+    border-color: var(--border-color-dark);
+}
+
+/* Indicateur visuel de catégorie (barre colorée) */
+.post-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-complementary));
+}
+
+/* Style pour les catégories */
+.post-category {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: white;
+    background-color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.post-category.devops { background-color: var(--primary-color); }
+.post-category.automation { background-color: var(--accent-complementary); }
+.post-category.cloud { background-color: #14b8a6; } /* Teal */
+.post-category.ci-cd { background-color: #8b5cf6; } /* Purple */
+
+/* Mise en page plus dynamique pour les cartes avec image */
+.post-item-with-image {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.post-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Bouton d'action plus visible */
+.post-item .read-more {
+    display: inline-block;
+    padding: 8px 16px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border-radius: 6px;
+    font-weight: 500;
+    margin-top: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.post-item .read-more:hover {
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+/* 
+==============================================
+5. EN-TÊTE ET PIED DE PAGE AMÉLIORÉS
+==============================================
+*/
+/* En-tête avec effet de scroll */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* En-tête réduit lors du défilement */
+header.scrolled {
+    padding: 10px 20px;
+}
+
+/* Logo ou élément graphique distinctif */
+.site-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.logo-icon {
+    position: absolute;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.2);
+}
+
+.site-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--text-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+/* Navigation plus moderne */
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.main-nav a {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.main-nav a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.main-nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Icônes pour la navigation */
+.nav-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Pied de page amélioré */
+footer {
+    margin-top: 80px;
+    padding: 40px 20px;
+    background-color: var(--light-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: var(--primary-color);
+}
+
+/* Liens vers réseaux sociaux */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--light-bg-alt);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-color-lighter);
+    font-size: 0.9rem;
+}
+
+/* 
+==============================================
+6. MODE SOMBRE
+==============================================
+*/
+/* Bouton de basculement du mode sombre */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Styles pour le mode sombre */
+body.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text);
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: var(--dark-background-alt);
+    border-color: var(--dark-border);
+}
+
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode h6 {
+    color: var(--dark-text);
+}
+
+body.dark-mode p {
+    color: var(--dark-text-light);
+}
+
+body.dark-mode a {
+    color: var(--dark-accent);
+}
+
+body.dark-mode .post-item {
+    background-color: var(--dark-background-alt);
+    border-color: var(--dark-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .main-nav a {
+    color: var(--dark-text);
+}
+
+body.dark-mode .main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .main-nav a.active {
+    background-color: var(--dark-accent);
+}
+
+body.dark-mode .post-category.devops { background-color: var(--dark-accent); }
+body.dark-mode .post-category.automation { background-color: var(--dark-accent-complementary); }
+
+body.dark-mode .theme-toggle {
+    background-color: var(--dark-accent);
+}
+
+/* Détection des préférences système */
+@media (prefers-color-scheme: dark) {
+    body:not(.light-mode) {
+        background-color: var(--dark-background);
+        color: var(--dark-text);
+    }
+    
+    body:not(.light-mode) header,
+    body:not(.light-mode) footer {
+        background-color: var(--dark-background-alt);
+        border-color: var(--dark-border);
+    }
+    
+    body:not(.light-mode) h1, 
+    body:not(.light-mode) h2, 
+    body:not(.light-mode) h3, 
+    body:not(.light-mode) h4, 
+    body:not(.light-mode) h5, 
+    body:not(.light-mode) h6 {
+        color: var(--dark-text);
+    }
+    
+    body:not(.light-mode) p {
+        color: var(--dark-text-light);
+    }
+    
+    body:not(.light-mode) a {
+        color: var(--dark-accent);
+    }
+    
+    body:not(.light-mode) .post-item {
+        background-color: var(--dark-background-alt);
+        border-color: var(--dark-border);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* 
+==============================================
+7. AMÉLIORATIONS DE LA NAVIGATION
+==============================================
+*/
+/* Menu de navigation plus visible et intuitif */
+.main-nav {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* Indicateur de page active */
+.main-nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+/* Barre de recherche */
+.search-container {
+    position: relative;
+    margin-left: auto;
+}
+
+.search-input {
+    padding: 10px 15px 10px 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background-color: var(--background);
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    width: 300px;
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-color-lighter);
+}
+
+/* Navigation latérale améliorée */
+.sidebar-nav {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.sidebar-nav h3 {
+    margin: 0;
+    padding: 15px 20px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    color: white;
+    font-size: 1.2rem;
+}
+
+.sidebar-nav ul {
+    padding: 10px;
+}
+
+.sidebar-nav li {
+    margin: 5px 0;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+.sidebar-nav a.active {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+.sidebar-nav a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--accent-complementary);
+}
+
+/* 
+==============================================
+8. MISE EN PAGE ET ESPACEMENT
+==============================================
+*/
+/* Marges et paddings pour une respiration plus cohérente */
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding: 20px 0;
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+/* Assure que les éléments de texte dans main sont centrés */
+main h1, main h2, main h3, main h4, main h5, main h6, 
+main p, main ul, main ol, main blockquote {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+/* Grille plus dynamique pour certaines sections */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.grid-item {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Meilleur équilibre entre texte et espace blanc */
+p, ul, ol {
+    max-width: 70ch; /* Largeur optimale pour la lisibilité */
+}
+
+blockquote {
+    margin: 30px 0;
+    padding: 20px 30px;
+    background-color: var(--light-bg);
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+}
+
+/* Séparateurs de section élégants */
+.section-divider {
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
+    margin: 40px 0;
+    border-radius: 2px;
+}
+
+/* 
+==============================================
+9. TOUCHES PROFESSIONNELLES
+==============================================
+*/
+/* Bouton "Retour en haut" */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+/* Estimation du temps de lecture */
+.reading-time {
+    display: inline-block;
+    padding: 4px 10px;
+    background-color: var(--light-bg);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--text-color-light);
+    margin-bottom: 15px;
+}
+
+.reading-time::before {
+    content: "⏱️";
+    margin-right: 5px;
+}
+
+/* Étiquettes de niveau de difficulté */
+.difficulty-label {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.difficulty-beginner {
+    background-color: #86efac; /* Vert clair */
+    color: #166534;
+}
+
+.difficulty-intermediate {
+    background-color: #fde68a; /* Jaune */
+    color: #92400e;
+}
+
+.difficulty-advanced {
+    background-color: #fca5a5; /* Rouge clair */
+    color: #991b1b;
+}
+
+/* Indicateur de progression de lecture */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-complementary));
+    z-index: 2000;
+    transition: width 0.1s ease;
+}
+
+/* 
+==============================================
+10. RESPONSIVE DESIGN AMÉLIORÉ
+==============================================
+*/
+/* Tablettes */
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .sidebar-nav {
+        position: static;
+    }
+    
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .main-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .main-nav a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .search-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .search-input, .search-input:focus {
+        width: 100%;
+    }
+    
+    .post-item-with-image {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 
+==============================================
+11. JAVASCRIPT REQUIS
+==============================================
+Ce CSS nécessite quelques fonctions JavaScript pour fonctionner pleinement:
+- Effet de scroll sur l'en-tête
+- Bouton de basculement du mode sombre
+- Bouton "Retour en haut"
+- Indicateur de progression de lecture
+
+Voici un exemple de code JavaScript à ajouter:
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Effet de scroll sur l'en-tête
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Bouton de basculement du mode sombre
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+        
+        // Vérifier les préférences enregistrées
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    }
+    
+    // Bouton "Retour en haut"
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Indicateur de progression de lecture
+    const readingProgress = document.querySelector('.reading-progress');
+    if (readingProgress) {
+        window.addEventListener('scroll', function() {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY / documentHeight * 100;
+            readingProgress.style.width = scrolled + '%';
+        });
+    }
+});
+*/

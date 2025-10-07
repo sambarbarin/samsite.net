@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=34819&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <title>Exemples de workflows | Portfolio DevOps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <style>
+         
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --background: #ffffff;
+            --light-bg: #f3f4f6;
+            --border-color: #e5e7eb;
+            --code-bg: #f1f5f9;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-color);
+            background-color: var(--background);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-color);
+        }
+        
+        h1 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.3em;
+            margin-bottom: 1em;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.2em;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        p {
+            margin-bottom: 1.5em;
+        }
+        
+        code {
+            font-family: 'Source Code Pro', monospace;
+            background-color: var(--code-bg);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background-color: var(--code-bg);
+            padding: 1em;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1em;
+            margin-left: 0;
+            color: var(--light-text);
+        }
+        
+        ul, ol {
+            padding-left: 1.5em;
+            margin-bottom: 1.5em;
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        header h1 {
+            margin-top: 0;
+            font-size: 2.5rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        nav {
+            margin: 20px 0;
+            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        nav a {
+            padding: 8px 16px;
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+        }
+        
+        article {
+            margin-top: 20px;
+        }
+        
+        .post-meta {
+            color: var(--light-text);
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9em;
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+         
+        .content-wrapper {
+            display: flex;
+            gap: 40px;
+        }
+        
+         
+        .sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+        
+        .sidebar-nav {
+            position: sticky;
+            top: 20px;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-nav h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .sidebar-nav li {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar-nav a {
+            display: block;
+            padding: 8px 10px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .sidebar-nav a:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+        
+        .sidebar-nav a.active {
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 500;
+        }
+        
+         
+        main {
+            flex-grow: 1;
+            min-width: 0;
+        }
+        
+         
+        .page-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .page-navigation a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            max-width: 45%;
+        }
+        
+        .page-navigation a:hover {
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .prev-page {
+            margin-right: auto;
+        }
+        
+        .next-page {
+            margin-left: auto;
+            flex-direction: row-reverse;
+        }
+        
+        .nav-arrow {
+            font-size: 1.5rem;
+            line-height: 1;
+            padding: 0 8px;
+        }
+        
+        .nav-title {
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+         
+        @media (max-width: 900px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+            }
+            
+            .sidebar-nav {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav a {
+                display: block;
+                text-align: center;
+            }
+            
+            .page-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .page-navigation a {
+                max-width: 100%;
+            }
+            
+            .next-page {
+                align-self: flex-end;
+            }
+            
+            .prev-page {
+                align-self: flex-start;
+            }
+        }
+    </style>
+    
+    <link rel="stylesheet" href="/css/style-improvements.css">
+    <script src="/js/style-improvements.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="/" class="site-logo">
+            <div class="logo-icon">D</div>
+            <h1 class="site-title">Portfolio DevOps</h1>
+        </a>
+        <nav class="main-nav">
+            <a href="/" class="nav-item">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </span>
+                Accueil
+            </a>
+            <a href="/posts/" class="nav-item">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </span>
+                Posts
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Rechercher...">
+                <span class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+            </div>
+        </nav>
+    </header>
+    
+    
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <h3>Sommaire n8n</h3>
+                <ul>
+                    
+                    
+                        
+                    
+                        
+                            <li>
+                                <a href="/posts/n8n/installation/" class="">
+                                    Installation
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/posts/n8n/premiers-pas/" class="">
+                                    Premiers pas
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/posts/n8n/exemples-workflows/" class="active">
+                                    Exemples de workflows
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/posts/n8n/gestion-ressources/" class="">
+                                    Gestion des ressources
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/posts/n8n/limites-bonnes-pratiques/" class="">
+                                    Limites et bonnes pratiques
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/posts/n8n/aller-plus-loin/" class="">
+                                    Aller plus loin
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/posts/n8n/ressources-utiles/" class="">
+                                    Ressources utiles
+                                </a>
+                            </li>
+                        
+                    
+                        
+                    
+                </ul>
+            </nav>
+        </aside>
+        
+        <main>
+    
+        <h1>Exemples de workflows</h1>
+        
+        <p><em>Publié le 09/06/2024</em></p>
+        
+        
+        <article>
+            <h1 id="exemples-de-workflows-avec-n8n">Exemples de workflows avec n8n</h1>
+<p>Cette section présente plusieurs exemples concrets de workflows que vous pouvez créer avec n8n. Ces exemples vous aideront à comprendre les possibilités offertes par la plateforme et à vous inspirer pour vos propres automatisations.</p>
+<h2 id="exemple-1--surveillance-de-prix-et-notification">Exemple 1 : Surveillance de prix et notification</h2>
+<p>Ce workflow surveille le prix d&rsquo;un produit sur un site web et vous envoie une notification lorsque le prix baisse.</p>
+<h3 id="composants-du-workflow-">Composants du workflow :</h3>
+<ol>
+<li><strong>Schedule Trigger</strong> : Exécution quotidienne</li>
+<li><strong>HTTP Request</strong> : Récupération de la page web du produit</li>
+<li><strong>HTML Extract</strong> : Extraction du prix du produit</li>
+<li><strong>IF</strong> : Vérification si le prix est inférieur à un seuil défini</li>
+<li><strong>Slack</strong> : Envoi d&rsquo;une notification si le prix a baissé</li>
+</ol>
+<h3 id="étapes-de-configuration-">Étapes de configuration :</h3>
+<ol>
+<li>Configurez le déclencheur Schedule pour s&rsquo;exécuter une fois par jour</li>
+<li>Dans le nœud HTTP Request, entrez l&rsquo;URL de la page du produit</li>
+<li>Utilisez HTML Extract pour cibler l&rsquo;élément HTML contenant le prix</li>
+<li>Configurez le nœud IF pour comparer le prix extrait avec votre seuil</li>
+<li>Configurez le nœud Slack pour envoyer un message avec les détails du produit et son prix</li>
+</ol>
+<h2 id="exemple-2--synchronisation-entre-crm-et-tableur">Exemple 2 : Synchronisation entre CRM et tableur</h2>
+<p>Ce workflow synchronise automatiquement les nouveaux contacts de votre CRM vers un tableur Google Sheets.</p>
+<h3 id="composants-du-workflow--1">Composants du workflow :</h3>
+<ol>
+<li><strong>Webhook</strong> : Déclenché par un événement du CRM</li>
+<li><strong>CRM Node</strong> (ex: HubSpot, Salesforce) : Récupération des détails du contact</li>
+<li><strong>Function</strong> : Formatage des données</li>
+<li><strong>Google Sheets</strong> : Ajout d&rsquo;une ligne dans le tableur</li>
+</ol>
+<h3 id="étapes-de-configuration--1">Étapes de configuration :</h3>
+<ol>
+<li>Créez un webhook dans n8n et configurez votre CRM pour l&rsquo;appeler lors de la création d&rsquo;un contact</li>
+<li>Configurez le nœud CRM pour récupérer les détails complets du contact</li>
+<li>Utilisez un nœud Function pour formater les données selon la structure de votre tableur</li>
+<li>Configurez le nœud Google Sheets pour ajouter les données dans la feuille appropriée</li>
+</ol>
+<h2 id="exemple-3--automatisation-de-médias-sociaux">Exemple 3 : Automatisation de médias sociaux</h2>
+<p>Ce workflow publie automatiquement sur plusieurs plateformes de médias sociaux à partir d&rsquo;un seul formulaire.</p>
+<h3 id="composants-du-workflow--2">Composants du workflow :</h3>
+<ol>
+<li><strong>Form Trigger</strong> : Formulaire pour saisir le contenu à publier</li>
+<li><strong>Twitter</strong> : Publication sur Twitter</li>
+<li><strong>LinkedIn</strong> : Publication sur LinkedIn</li>
+<li><strong>Facebook</strong> : Publication sur Facebook</li>
+<li><strong>Telegram</strong> : Envoi d&rsquo;un message sur un canal Telegram</li>
+</ol>
+<h3 id="étapes-de-configuration--2">Étapes de configuration :</h3>
+<ol>
+<li>Créez un formulaire avec des champs pour le texte, les images et les options de publication</li>
+<li>Configurez les nœuds de médias sociaux avec les credentials appropriés</li>
+<li>Utilisez des nœuds IF pour déterminer sur quelles plateformes publier selon les options sélectionnées</li>
+<li>Ajoutez des nœuds de notification pour confirmer les publications réussies</li>
+</ol>
+<h2 id="exemple-4--traitement-automatisé-de-données">Exemple 4 : Traitement automatisé de données</h2>
+<p>Ce workflow récupère des données d&rsquo;une API, les traite et les stocke dans une base de données.</p>
+<h3 id="composants-du-workflow--3">Composants du workflow :</h3>
+<ol>
+<li><strong>Schedule Trigger</strong> : Exécution périodique</li>
+<li><strong>HTTP Request</strong> : Appel à une API externe</li>
+<li><strong>Function</strong> : Transformation et nettoyage des données</li>
+<li><strong>Split In Batches</strong> : Traitement par lots</li>
+<li><strong>PostgreSQL/MySQL</strong> : Insertion dans une base de données</li>
+</ol>
+<h3 id="étapes-de-configuration--3">Étapes de configuration :</h3>
+<ol>
+<li>Configurez le déclencheur Schedule selon la fréquence souhaitée</li>
+<li>Dans le nœud HTTP Request, configurez l&rsquo;appel API avec les paramètres nécessaires</li>
+<li>Utilisez un nœud Function pour transformer les données (filtrage, formatage, etc.)</li>
+<li>Configurez le nœud de base de données pour insérer ou mettre à jour les enregistrements</li>
+</ol>
+<h2 id="exemple-5--automatisation-de-support-client">Exemple 5 : Automatisation de support client</h2>
+<p>Ce workflow automatise le traitement des demandes de support reçues par email.</p>
+<h3 id="composants-du-workflow--4">Composants du workflow :</h3>
+<ol>
+<li><strong>Email Trigger (IMAP)</strong> : Surveillance d&rsquo;une boîte mail de support</li>
+<li><strong>Text Analysis</strong> : Analyse du contenu de l&rsquo;email</li>
+<li><strong>IF</strong> : Routage selon le type de demande</li>
+<li><strong>HTTP Request</strong> : Création d&rsquo;un ticket dans un système de support</li>
+<li><strong>Send Email</strong> : Envoi d&rsquo;une réponse automatique</li>
+</ol>
+<h3 id="étapes-de-configuration--4">Étapes de configuration :</h3>
+<ol>
+<li>Configurez le déclencheur Email pour surveiller une boîte mail spécifique</li>
+<li>Utilisez un nœud Function avec des expressions régulières pour analyser le contenu</li>
+<li>Configurez des branches conditionnelles pour différents types de demandes</li>
+<li>Paramétrez les intégrations avec votre système de tickets de support</li>
+<li>Créez des modèles de réponses automatiques selon le type de demande</li>
+</ol>
+<h2 id="conseils-pour-adapter-ces-exemples">Conseils pour adapter ces exemples</h2>
+<ul>
+<li>Commencez par copier un exemple qui se rapproche de votre besoin</li>
+<li>Modifiez progressivement les nœuds pour les adapter à vos systèmes</li>
+<li>Testez fréquemment pendant la modification pour identifier rapidement les problèmes</li>
+<li>Documentez votre workflow avec des notes sur chaque nœud</li>
+<li>Utilisez des nœuds &ldquo;Error Trigger&rdquo; pour gérer les cas d&rsquo;échec</li>
+</ul>
+
+        </article>
+        
+        
+        <div class="page-navigation">
+            
+            
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+            
+            
+                
+                <a href="/posts/n8n/premiers-pas/" class="prev-page">
+                    <span class="nav-arrow">←</span>
+                    <span class="nav-title">Premiers pas</span>
+                </a>
+            
+            
+            
+                
+                <a href="/posts/n8n/gestion-ressources/" class="next-page">
+                    <span class="nav-title">Gestion des ressources</span>
+                    <span class="nav-arrow">→</span>
+                </a>
+            
+        </div>
+        
+    </main>
+    
+    </div>
+    
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>À propos</h3>
+                <p>Portfolio DevOps présentant mes compétences et projets dans le domaine de l'automatisation, du cloud et du CI/CD.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou collaborations.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Portfolio DevOps | Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>

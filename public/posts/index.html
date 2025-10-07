@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=34819&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <title>Posts | Portfolio DevOps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <style>
+         
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-color: #1f2937;
+            --light-text: #6b7280;
+            --background: #ffffff;
+            --light-bg: #f3f4f6;
+            --border-color: #e5e7eb;
+            --code-bg: #f1f5f9;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-color);
+            background-color: var(--background);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-color);
+        }
+        
+        h1 {
+            font-size: 2.25rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.3em;
+            margin-bottom: 1em;
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.2em;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        p {
+            margin-bottom: 1.5em;
+        }
+        
+        code {
+            font-family: 'Source Code Pro', monospace;
+            background-color: var(--code-bg);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+        
+        pre {
+            background-color: var(--code-bg);
+            padding: 1em;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1em;
+            margin-left: 0;
+            color: var(--light-text);
+        }
+        
+        ul, ol {
+            padding-left: 1.5em;
+            margin-bottom: 1.5em;
+        }
+        
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        header h1 {
+            margin-top: 0;
+            font-size: 2.5rem;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        nav {
+            margin: 20px 0;
+            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        nav a {
+            padding: 8px 16px;
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        nav a:hover {
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .post-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: var(--light-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .post-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .post-item h3 {
+            margin-top: 0;
+        }
+        
+        .post-date {
+            color: var(--light-text);
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .post-summary {
+            margin-top: 10px;
+        }
+        
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9em;
+            color: var(--light-text);
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.25rem;
+            }
+            
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            nav a {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+    
+    <link rel="stylesheet" href="/css/style-improvements.css">
+    <script src="/js/style-improvements.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="/" class="site-logo">
+            <div class="logo-icon">D</div>
+            <h1 class="site-title">Portfolio DevOps</h1>
+        </a>
+        <nav class="main-nav">
+            <a href="/" class="nav-item">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </span>
+                Accueil
+            </a>
+            <a href="/posts/" class="nav-item">
+                <span class="nav-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </span>
+                Posts
+            </a>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Rechercher...">
+                <span class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </span>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Posts</h1>
+        
+        
+        <div class="content">
+            <p>Bienvenue dans la section des posts. Vous trouverez ici des articles et tutoriels sur différentes technologies comme n8n, GitLab CI, Terraform et plus encore.</p>
+
+        </div>
+        
+        
+        
+        <ul class="post-list">
+            
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/">Découverte de n8n</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Qu&rsquo;est-ce que n8n ? n8n est une plateforme d&rsquo;automatisation de flux de travail (workflow automation) open-source qui permet de connecter différentes applications et services sans avoir …
+                    </div>
+                    <a href="/posts/n8n/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/installation/">Installation</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Installation de n8n L&rsquo;installation de n8n peut se faire de plusieurs façons selon vos besoins et votre environnement technique.
+Prérequis Avant d&rsquo;installer n8n, assurez-vous d&rsquo;avoir …
+                    </div>
+                    <a href="/posts/n8n/installation/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/premiers-pas/">Premiers pas</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Premiers pas avec n8n Après avoir installé n8n, vous êtes prêt à créer votre premier workflow. Cette section vous guidera à travers les étapes fondamentales pour bien démarrer avec n8n.
+Accéder à …
+                    </div>
+                    <a href="/posts/n8n/premiers-pas/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/exemples-workflows/">Exemples de workflows</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Exemples de workflows avec n8n Cette section présente plusieurs exemples concrets de workflows que vous pouvez créer avec n8n. Ces exemples vous aideront à comprendre les possibilités offertes par la …
+                    </div>
+                    <a href="/posts/n8n/exemples-workflows/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/gestion-ressources/">Gestion des ressources</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Gestion des ressources dans n8n La gestion efficace des ressources est essentielle pour maintenir vos workflows n8n performants et fiables. Cette section couvre les aspects importants de la gestion …
+                    </div>
+                    <a href="/posts/n8n/gestion-ressources/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/limites-bonnes-pratiques/">Limites et bonnes pratiques</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Limites et bonnes pratiques de n8n Comme tout outil d&rsquo;automatisation, n8n présente certaines limites qu&rsquo;il est important de connaître. Cette section explore ces limites et propose des …
+                    </div>
+                    <a href="/posts/n8n/limites-bonnes-pratiques/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/aller-plus-loin/">Aller plus loin</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Aller plus loin avec n8n Une fois que vous maîtrisez les bases de n8n, vous pouvez explorer des fonctionnalités plus avancées pour créer des automatisations plus puissantes et sophistiquées. Cette …
+                    </div>
+                    <a href="/posts/n8n/aller-plus-loin/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+                <li class="post-item">
+                    <span class="post-category devops">DevOps</span>
+                    <h2><a href="/posts/n8n/ressources-utiles/">Ressources utiles</a></h2>
+                    
+                    <div class="post-date">Publié le 09/06/2024</div>
+                    
+                    
+                    <div class="post-summary">
+                        Ressources utiles pour n8n Cette section regroupe diverses ressources qui vous aideront à approfondir vos connaissances sur n8n et à résoudre les problèmes que vous pourriez rencontrer.
+Documentation …
+                    </div>
+                    <a href="/posts/n8n/ressources-utiles/" class="read-more">Lire la suite</a>
+                    
+                </li>
+                
+            
+        </ul>
+        
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>À propos</h3>
+                <p>Portfolio DevOps présentant mes compétences et projets dans le domaine de l'automatisation, du cloud et du CI/CD.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/posts/">Posts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p>N'hésitez pas à me contacter pour discuter de projets ou collaborations.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Portfolio DevOps | Tous droits réservés</p>
+        </div>
+    </footer>
+</body>
+</html>
