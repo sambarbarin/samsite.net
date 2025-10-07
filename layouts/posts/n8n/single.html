@@ -352,10 +352,10 @@
 </head>
 <body style="border: 10px solid red;">
     <header>
-        <h1 class="site-title"><a href="/">{{ .Site.Title }}</a></h1>
+        <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
         <nav class="main-nav">
-            <a href="/">Accueil</a>
-            <a href="/posts/">Posts</a>
+            <a href="{{ "/" | relURL }}">Accueil</a>
+            <a href="{{ "posts/" | relURL }}">Posts</a>
         </nav>
         <div style="background-color: red; color: white; padding: 10px; margin: 10px 0;">TEST TEMPLATE VISIBLE</div>
     </header>

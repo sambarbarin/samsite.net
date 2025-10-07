@@ -321,10 +321,10 @@
 </head>
 <body>
     <header>
-        <h1 class="site-title"><a href="/">{{ .Site.Title }}</a></h1>
+        <h1 class="site-title"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h1>
         <nav class="main-nav">
-            <a href="/">Accueil</a>
-            <a href="/posts/">Posts</a>
+            <a href="{{ "/" | relURL }}">Accueil</a>
+            <a href="{{ "posts/" | relURL }}">Posts</a>
         </nav>
     </header>
     
