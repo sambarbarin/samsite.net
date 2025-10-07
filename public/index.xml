@@ -2,73 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portfolio DevOps</title>
-    <link>http://localhost:34819/</link>
+    <link>http://localhost:1313/samsite.net/</link>
     <description>Recent content on Portfolio DevOps</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 09 Jun 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:34819/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/samsite.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Découverte de n8n</title>
-      <link>http://localhost:34819/posts/n8n/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/</guid>
       <description>Qu&amp;rsquo;est-ce que n8n ? n8n est une plateforme d&amp;rsquo;automatisation de flux de travail (workflow automation) open-source qui permet de connecter différentes applications et services sans avoir besoin de compétences en programmation avancées. Elle offre une interface visuelle pour créer des workflows automatisés.&#xA;Caractéristiques principales Open-source et auto-hébergeable : Contrairement à des solutions comme Zapier ou Integromat, n8n peut être hébergé sur votre propre infrastructure Interface visuelle intuitive : Création de workflows par glisser-déposer Plus de 200 intégrations : Connexion avec des services populaires comme Google, Slack, Twitter, etc.</description>
     </item>
     <item>
       <title>n8n de A à Z</title>
-      <link>http://localhost:34819/test/</link>
+      <link>http://localhost:1313/samsite.net/test/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/test/</guid>
+      <guid>http://localhost:1313/samsite.net/test/</guid>
       <description>n8n de A à Z Bienvenue sur cette page dédiée à n8n, la plateforme d&amp;rsquo;automatisation des workflows qui simplifie l&amp;rsquo;intégration et la gestion de tâches entre vos outils.&#xA;Table des matières Présentation de n8n Installation Premiers pas Exemples de workflows Gestion des ressources Limites et bonnes pratiques Aller plus loin Ressources utiles Présentation de n8n n8n est une plateforme open source d&amp;rsquo;automatisation des workflows. Elle permet de connecter différents services (API, bases de données, emails, etc.</description>
     </item>
     <item>
       <title>Installation</title>
-      <link>http://localhost:34819/posts/n8n/installation/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/installation/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/installation/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/installation/</guid>
       <description>Installation de n8n L&amp;rsquo;installation de n8n peut se faire de plusieurs façons selon vos besoins et votre environnement technique.&#xA;Prérequis Avant d&amp;rsquo;installer n8n, assurez-vous d&amp;rsquo;avoir :&#xA;Node.js (version 14 ou supérieure) npm ou yarn Éventuellement Docker si vous préférez cette méthode Méthodes d&amp;rsquo;installation Avec npm La méthode la plus simple pour une installation rapide :&#xA;npm install n8n -g n8n start Une fois installé, n8n sera accessible à l&amp;rsquo;adresse http://localhost:5678.</description>
     </item>
     <item>
       <title>Premiers pas</title>
-      <link>http://localhost:34819/posts/n8n/premiers-pas/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/premiers-pas/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/premiers-pas/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/premiers-pas/</guid>
       <description>Premiers pas avec n8n Après avoir installé n8n, vous êtes prêt à créer votre premier workflow. Cette section vous guidera à travers les étapes fondamentales pour bien démarrer avec n8n.&#xA;Accéder à l&amp;rsquo;interface Ouvrez votre navigateur et accédez à http://localhost:5678 (ou l&amp;rsquo;URL où vous avez déployé n8n) Si c&amp;rsquo;est votre première connexion, vous devrez peut-être créer un compte utilisateur Une fois connecté, vous verrez le tableau de bord principal de n8n Comprendre l&amp;rsquo;interface L&amp;rsquo;interface de n8n est divisée en plusieurs zones :</description>
     </item>
     <item>
       <title>Exemples de workflows</title>
-      <link>http://localhost:34819/posts/n8n/exemples-workflows/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/exemples-workflows/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/exemples-workflows/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/exemples-workflows/</guid>
       <description>Exemples de workflows avec n8n Cette section présente plusieurs exemples concrets de workflows que vous pouvez créer avec n8n. Ces exemples vous aideront à comprendre les possibilités offertes par la plateforme et à vous inspirer pour vos propres automatisations.&#xA;Exemple 1 : Surveillance de prix et notification Ce workflow surveille le prix d&amp;rsquo;un produit sur un site web et vous envoie une notification lorsque le prix baisse.&#xA;Composants du workflow : Schedule Trigger : Exécution quotidienne HTTP Request : Récupération de la page web du produit HTML Extract : Extraction du prix du produit IF : Vérification si le prix est inférieur à un seuil défini Slack : Envoi d&amp;rsquo;une notification si le prix a baissé Étapes de configuration : Configurez le déclencheur Schedule pour s&amp;rsquo;exécuter une fois par jour Dans le nœud HTTP Request, entrez l&amp;rsquo;URL de la page du produit Utilisez HTML Extract pour cibler l&amp;rsquo;élément HTML contenant le prix Configurez le nœud IF pour comparer le prix extrait avec votre seuil Configurez le nœud Slack pour envoyer un message avec les détails du produit et son prix Exemple 2 : Synchronisation entre CRM et tableur Ce workflow synchronise automatiquement les nouveaux contacts de votre CRM vers un tableur Google Sheets.</description>
     </item>
     <item>
       <title>Gestion des ressources</title>
-      <link>http://localhost:34819/posts/n8n/gestion-ressources/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/gestion-ressources/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/gestion-ressources/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/gestion-ressources/</guid>
       <description>Gestion des ressources dans n8n La gestion efficace des ressources est essentielle pour maintenir vos workflows n8n performants et fiables. Cette section couvre les aspects importants de la gestion des ressources dans n8n.&#xA;Types de ressources dans n8n 1. Workflows Les workflows sont vos automatisations principales dans n8n. Pour une gestion efficace :&#xA;Organisation : Utilisez des noms descriptifs et cohérents Versionnement : Exportez régulièrement vos workflows pour les sauvegarder Documentation : Ajoutez des notes à vos workflows et nœuds pour expliquer leur fonctionnement Modularité : Divisez les workflows complexes en plusieurs workflows plus petits et spécialisés 2.</description>
     </item>
     <item>
       <title>Limites et bonnes pratiques</title>
-      <link>http://localhost:34819/posts/n8n/limites-bonnes-pratiques/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/limites-bonnes-pratiques/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/limites-bonnes-pratiques/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/limites-bonnes-pratiques/</guid>
       <description>Limites et bonnes pratiques de n8n Comme tout outil d&amp;rsquo;automatisation, n8n présente certaines limites qu&amp;rsquo;il est important de connaître. Cette section explore ces limites et propose des bonnes pratiques pour tirer le meilleur parti de n8n tout en évitant les pièges courants.&#xA;Limites techniques Performances et scalabilité Traitement de données volumineuses : n8n peut ralentir lors du traitement de très grands ensembles de données (plusieurs millions d&amp;rsquo;enregistrements) Exécutions simultanées : Le nombre d&amp;rsquo;exécutions simultanées est limité par les ressources du serveur Mémoire : Les workflows complexes peuvent consommer beaucoup de mémoire, surtout avec des transformations de données importantes Intégrations Limitations des API tierces : Les quotas et limites des API externes peuvent affecter vos workflows Nœuds disponibles : Certains services peuvent ne pas avoir de nœud dédié ou avoir des fonctionnalités limitées Mises à jour des API : Les changements dans les API externes peuvent nécessiter des mises à jour de vos workflows Déploiement Haute disponibilité : La configuration d&amp;rsquo;une architecture hautement disponible nécessite une configuration avancée Équilibrage de charge : Le clustering n&amp;rsquo;est pas nativement supporté dans la version communautaire Dépendances : Certains nœuds peuvent nécessiter des dépendances système spécifiques Bonnes pratiques générales Architecture des workflows Principe de responsabilité unique : Chaque workflow devrait avoir une seule responsabilité bien définie Modularité : Divisez les workflows complexes en plusieurs workflows plus petits et spécialisés Idempotence : Concevez vos workflows pour qu&amp;rsquo;ils puissent être exécutés plusieurs fois sans effets secondaires indésirables Gestion des erreurs : Prévoyez toujours des branches de gestion d&amp;rsquo;erreurs dans vos workflows critiques Sécurité Principe du moindre privilège : Accordez uniquement les permissions nécessaires aux credentials Chiffrement : Utilisez HTTPS pour toutes les communications externes Authentification : Activez l&amp;rsquo;authentification pour l&amp;rsquo;interface n8n en production Audit : Gardez une trace des modifications apportées aux workflows critiques Optimisation des performances Filtrage précoce : Filtrez les données le plus tôt possible dans le workflow Pagination : Utilisez la pagination pour traiter de grands ensembles de données Mise en cache : Mettez en cache les résultats qui ne changent pas fréquemment Exécutions planifiées : Répartissez les exécutions planifiées pour éviter les pics de charge Bonnes pratiques par cas d&amp;rsquo;usage Intégration de données Validez les données d&amp;rsquo;entrée avant traitement Prévoyez des mécanismes de réconciliation pour les mises à jour Utilisez des identifiants uniques pour éviter les doublons Conservez des journaux détaillés des transferts de données Automatisation marketing Respectez les réglementations sur la protection des données (RGPD, etc.</description>
     </item>
     <item>
       <title>Aller plus loin</title>
-      <link>http://localhost:34819/posts/n8n/aller-plus-loin/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/aller-plus-loin/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/aller-plus-loin/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/aller-plus-loin/</guid>
       <description>Aller plus loin avec n8n Une fois que vous maîtrisez les bases de n8n, vous pouvez explorer des fonctionnalités plus avancées pour créer des automatisations plus puissantes et sophistiquées. Cette section vous présente des techniques et concepts avancés pour tirer le meilleur parti de n8n.&#xA;Programmation avancée avec n8n Utilisation des nœuds Function Le nœud Function vous permet d&amp;rsquo;écrire du code JavaScript personnalisé pour manipuler vos données :&#xA;// Exemple de transformation de données avec un nœud Function items = items.</description>
     </item>
     <item>
       <title>Ressources utiles</title>
-      <link>http://localhost:34819/posts/n8n/ressources-utiles/</link>
+      <link>http://localhost:1313/samsite.net/posts/n8n/ressources-utiles/</link>
       <pubDate>Sun, 09 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:34819/posts/n8n/ressources-utiles/</guid>
+      <guid>http://localhost:1313/samsite.net/posts/n8n/ressources-utiles/</guid>
       <description>Ressources utiles pour n8n Cette section regroupe diverses ressources qui vous aideront à approfondir vos connaissances sur n8n et à résoudre les problèmes que vous pourriez rencontrer.&#xA;Documentation officielle La documentation officielle de n8n est la source d&amp;rsquo;information la plus complète et à jour :&#xA;Documentation n8n - Guide complet couvrant tous les aspects de n8n Référence des nœuds - Documentation détaillée de tous les nœuds disponibles Tutoriels officiels - Guides pas à pas pour créer différents types de workflows Communauté et support Rejoignez la communauté n8n pour obtenir de l&amp;rsquo;aide et partager vos connaissances :</description>
     </item>
   </channel>

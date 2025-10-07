@@ -1,0 +1,17 @@
+# Hugo build output
+public/
+resources/
+.hugo_build.lock
+
+# Hugo theme (will be cloned during build)
+themes/PaperMod/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
